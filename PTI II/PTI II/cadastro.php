@@ -11,9 +11,9 @@ $conexao = mysqli_connect("localhost","root","","aluno") or print (mysqli_error(
 $query = "INSERT INTO cadastro (nome,email,senha) VALUES ('$name','$email', '$passwd')";
 
 if (mysqli_query($conexao, $query)) {  
-    header("Location: login.php?msg=OK");
+    header("Location: login.html?msg=OK");
 } else {
-    header("Location: login.php?msg=ERRO");
+    header("Location: login.html?msg=ERRO");
 }
 
 ?>
