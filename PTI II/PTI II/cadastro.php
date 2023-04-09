@@ -4,7 +4,7 @@
 
 $name = $_POST['nome_cad'];
 $email = $_POST['email_cad'];
-$passwd  = ($_POST['senha_cad']);
+$passwd  = md5($_POST['senha_cad']);
  
 $conexao = mysqli_connect("localhost","root","","aluno") or print (mysqli_error());
 

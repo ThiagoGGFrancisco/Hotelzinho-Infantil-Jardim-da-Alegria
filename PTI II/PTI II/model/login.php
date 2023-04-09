@@ -7,8 +7,8 @@
         // Acessa
         include_once('conexao.php');
         $email = $_POST['email'];
-        $senha = $_POST['senha'];
-
+        $senha = md5($_POST['senha']) ;
+        
         // print_r('Email: ' . $email);
         // print_r('<br>');
         // print_r('Senha: ' . $senha);
@@ -36,6 +36,6 @@
     else
     {
         // Não acessa
-        header('Location: login.html');
+        header('Location: ');
     }
 ?>

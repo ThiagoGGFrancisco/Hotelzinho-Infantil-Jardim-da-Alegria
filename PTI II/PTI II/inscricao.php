@@ -54,7 +54,6 @@ src: url(Nice\ Sugar.ttf)
                              
 <div class="content">   
         
-
 <br>
 <div class="alert alert-primary" role="alert">
 <div class="inputBox">

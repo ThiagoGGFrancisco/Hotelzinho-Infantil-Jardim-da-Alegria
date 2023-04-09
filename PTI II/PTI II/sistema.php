@@ -51,6 +51,15 @@
         echo "<h1>Bem vindo <u>$logado</u></h1>";
     ?>
     <br>
+    <ul id="menu">
+        <li class="botao"> <a href="../PTI II/rematricula.php"><b> Rematricula </b> </a> </li>
+        <li class="botao"> <a href="#"><b> Atividade </b> </a> </li>
+        <li class="botao"> <a href="#"><b> Turmas </b> </a></li> <br>
+        <li class="botao"> <a href="#"><b> Nossas Redes </b> </a></li>
+        <li class="botao"> <a href="#"><b> Calendário </b></a> </li>
+        <li class="botao"> <a href="#"><b> Endereço </b> </a></li>
+    </ul>
+</body>
     
 </script>
 </html>

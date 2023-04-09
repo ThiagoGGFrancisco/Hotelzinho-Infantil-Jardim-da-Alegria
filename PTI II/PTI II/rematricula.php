@@ -45,28 +45,23 @@ src: url(Nice\ Sugar.ttf)
 <ul id="menusuperior">
 <li class="vermelho"><a href="inicio.html"> Inicio </a> </li>
 <li><a href="sobre.html"> Sobre </a> </li>
-<li><a href="#"> Contato </a>  </li>
-<li> <a href="login.html"> Login </a> </li>
+<li><a href="sistema.php"> Volta </a>  </li>
+<li> <a href="sair.php">Sair</a>  </li>
 </ul>
 <br><br>
-  
-<div class="row">
-<div class="col-md-5">
-<span class="glyphicon glyphicon-user style="font-size:30px></span>
-</div>
-<div class="alert alert-secondary" role="alert">
-<div class="card text-center">
-<div class="card-body" >
+
+<div class="content">   
         
-<div class="box">
-<img src="../PTI II/imagens/ico.png"  width="100" height="100"/>
-<form action="formulario.php" method="POST">
-<fieldset>
-            
-<legend><b>Rematrícula</b></legend>
 <br>
 <div class="alert alert-primary" role="alert">
 <div class="inputBox">
+
+<div class="box">
+<img src="../PTI II/imagens/ico.png"  width="100" height="100"/>
+<form action="rematricula.php" method="POST">
+<fieldset>
+            
+<legend><b>Rematrícula</b></legend>
 <input type="text" name="turma" id="turma" class="inputUser" required>
 <label for="turma" class="labelInput">Turma:</label>
 </div>
@@ -106,7 +101,7 @@ src: url(Nice\ Sugar.ttf)
 
 <div class="inputBox">
 <input type="date" name="data" id="data" class="inputUser" required>
-<label for="data" class="labelInput">Idade do Aluno:</label>
+<label for="data" class="labelInput">Nascimento da criança:</label>
 </div>
 
 <div class="inputBox">
@@ -120,7 +115,10 @@ src: url(Nice\ Sugar.ttf)
 </form>
 </div>
 </
-    
+</div>
 </div>
 </body>
 </html>
+
+
+
