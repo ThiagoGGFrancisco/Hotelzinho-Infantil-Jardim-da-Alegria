@@ -1,0 +1,107 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: nicesugar;
+    margin-bottom: 15px;
+}
+
+#menusuperior {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    
+}
+
+#menu {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    
+}
+
+#menu li {
+    display:inline-block;
+       
+}
+
+#menusuperior li {
+    display:inline;
+    
+}
+
+#menusuperior li a {
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+       
+}
+
+#menu li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #ea272a;
+       
+}
+
+#menusuperior li:first-child a {
+    color: #ea272a;
+    
+}
+
+#menusuperior li:nth-child(2) a {
+    color: #ffd112;
+       
+}
+
+#menusuperior li:nth-child(3) a {
+    color: #7cbcd2;
+       
+}
+
+#menusuperior li:last-child a {
+    color: #76a94f
+       
+}
+
+.botao {
+    border: 2px solid #ea272a;
+    border-radius: 100px;
+    width: 200px;
+    padding: 10px;
+    text-align:center;
+    user-select: none;
+    cursor: pointer;
+    height: 50px;
+
+}
+
+.logoesquerda {
+    height: 200px;
+    
+}
+
+.redes {
+    height: 50px;
+    
+    
+}
+.botao:hover {
+    border: 5px solid #ea272a;
+    
+}
+
+
+a:link {
+    text-decoration: none;
+    color: #7cbcd2;
+}
+
+select  {
+    background-color:transparent;
+    border: transparent;
+    resize: none;
+    color: #ea272a;
+    text-align: center;
+        
+    }   
