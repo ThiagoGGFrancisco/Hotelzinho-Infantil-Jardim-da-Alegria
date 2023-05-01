@@ -55,14 +55,8 @@ include('protect.php');
 </body>
     
      
-    <?php
-
-session_start();
-?>
 
 
-
-    
     
             <div class="content">                                      
 
@@ -97,10 +91,12 @@ session_start();
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="userprofile" class="form-label">Documento</label>
-                                            <input type="file" class="form-control" id="userprofile" name="user_profile" autocomplete="off">
+                                    <div class="mb-3">      
+                                            <label for="usercontact" class="form-label">Níveis de acesso</label>
+                                            <input type="text" class="form-control" id="usercontact" name="user_adm" placeholder="Ní­veis 0, 1 e 2. " autocomplete="off">
                                         </div>
+
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -148,8 +144,8 @@ session_start();
             
         </header>
         <?php
-        session_start();
-        if (isset($_SESSION["create"])) {
+       
+      if (isset($_SESSION["create"])) {
         ?>
         <div class="alert alert-success">
             <?php 
@@ -201,7 +197,7 @@ session_start();
         
         <?php
         include('conexao.php');
-        $sqlSelect = "SELECT * FROM professor";
+        $sqlSelect = "SELECT * FROM cadastro";
         $result = mysqli_query($conexao,$sqlSelect);
         while($data = mysqli_fetch_array($result)){
             ?>

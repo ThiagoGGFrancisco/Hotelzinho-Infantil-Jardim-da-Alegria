@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Maio-2023 às 14:47
+-- Tempo de geração: 01-Maio-2023 às 15:16
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 7.4.28
 
@@ -31,6 +31,7 @@ CREATE TABLE `cadastro` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `telefone` int(12) NOT NULL,
   `adm` int(1) NOT NULL,
   `senha` varchar(12) NOT NULL,
   `confirma` varchar(12) NOT NULL,
@@ -44,30 +45,30 @@ CREATE TABLE `cadastro` (
 -- Extraindo dados da tabela `cadastro`
 --
 
-INSERT INTO `cadastro` (`id`, `nome`, `email`, `adm`, `senha`, `confirma`, `recuperar_senha`, `data`, `admm`, `niveis_acesso_id`) VALUES
-(1, 'wa', 'wa@gmail.com', 0, '698d51a19d8a', '', NULL, '2023-04-07 03:51:27', 1, 0),
-(3, 'wa', 'wba@gmail.com', 0, '698d51a19d8a', '2', NULL, '2023-04-13 18:48:13', 0, 0),
-(4, 'wa', 'waba@gmail.com', 0, '698d51a19d8a', '', NULL, '2023-04-07 03:44:46', 0, 0),
-(5, 'wa', 'waa@gmail.com', 0, '698d51a19d8a', '', NULL, '2023-04-07 03:46:43', 0, 0),
-(10, 'wa', 'A@GMAIL.COM', 0, '81dc9bdb52d0', '', NULL, '2023-04-13 18:11:43', 0, 1),
-(13, 'wa', 'aa@gmail.com', 0, '11', '', NULL, '2023-04-07 04:01:19', 1, 0),
-(14, 'wa', 'aaa@gmail.com', 0, '11', '', NULL, '2023-04-07 17:13:01', 0, 0),
-(15, 'wa', 'ww@gmail.com', 0, '111', '', NULL, '2023-04-09 15:54:40', 0, 0),
-(28, 'wa', 'www@gmail.com', 0, '111', '', NULL, '2023-04-09 16:26:08', 0, 0),
-(30, 'bb', 'bb@gmail.com', 0, '6512bd43d9ca', '', NULL, '2023-04-09 17:23:55', 0, 0),
-(31, 'bbb', 'bbb@gmail.com', 0, '698d51a19d8a', '', NULL, '2023-04-09 17:31:42', 0, 0),
-(32, '', '', 0, 'd41d8cd98f00', '', NULL, '2023-04-12 17:50:26', 0, 0),
-(34, 'wa', 'Ab@GMAIL.COM', 0, '698d51a19d8a', '', NULL, '2023-04-12 17:50:57', 0, 0),
-(35, 'wa', 'wagner@gmail.com', 0, '111', '', NULL, '2023-04-16 12:31:38', 1, 1),
-(36, 'wa', 'dois@gmail.com', 0, '698d51a19d8a', '', NULL, '2023-04-12 18:31:50', 0, 0),
-(38, 'wa', 'vi@gmail.com', 0, '698d51a19d8a', '', NULL, '2023-04-13 01:56:32', 0, 0),
-(41, 'paulo', '111', 0, 'bce6f821b66b', '', NULL, '2023-04-13 17:59:39', 0, 0),
-(42, 'paulo', '1234', 0, '28bc21614075', '2', NULL, '2023-04-13 18:48:42', 0, 0),
-(45, 'paulo', 'ana@gmail.com', 1, '111', '', NULL, '2023-05-01 12:46:24', 0, 0),
-(46, 'wan', '12@gmail.com', 0, '698d51a19d8a', '1', NULL, '2023-04-13 18:49:13', 0, 1),
-(47, 'wagne', 'wagne@gmail.com', 0, '698d51a19d8a', '', NULL, '2023-04-16 15:15:07', 0, 0),
-(50, 'wan', '122@gmail.com', 2, '698d51a19d8a', '', NULL, '2023-05-01 12:45:56', 0, 0),
-(52, 'wa', '22@gmail.com', 1, '111', '', NULL, '2023-05-01 12:45:41', 0, 0);
+INSERT INTO `cadastro` (`id`, `nome`, `email`, `telefone`, `adm`, `senha`, `confirma`, `recuperar_senha`, `data`, `admm`, `niveis_acesso_id`) VALUES
+(1, 'wa', 'wa@gmail.com', 0, 0, '698d51a19d8a', '', NULL, '2023-04-07 03:51:27', 1, 0),
+(3, 'wa', 'wba@gmail.com', 0, 0, '698d51a19d8a', '2', NULL, '2023-04-13 18:48:13', 0, 0),
+(4, 'wa', 'waba@gmail.com', 0, 0, '698d51a19d8a', '', NULL, '2023-04-07 03:44:46', 0, 0),
+(5, 'wa', 'waa@gmail.com', 0, 0, '698d51a19d8a', '', NULL, '2023-04-07 03:46:43', 0, 0),
+(10, 'wa', 'A@GMAIL.COM', 0, 0, '81dc9bdb52d0', '', NULL, '2023-04-13 18:11:43', 0, 1),
+(13, 'wa', 'aa@gmail.com', 0, 0, '11', '', NULL, '2023-04-07 04:01:19', 1, 0),
+(14, 'wa', 'aaa@gmail.com', 0, 0, '11', '', NULL, '2023-04-07 17:13:01', 0, 0),
+(15, 'wa', 'ww@gmail.com', 0, 0, '111', '', NULL, '2023-04-09 15:54:40', 0, 0),
+(28, 'wa', 'www@gmail.com', 0, 0, '111', '', NULL, '2023-04-09 16:26:08', 0, 0),
+(30, 'bb', 'bb@gmail.com', 0, 0, '6512bd43d9ca', '', NULL, '2023-04-09 17:23:55', 0, 0),
+(31, 'bbb', 'bbb@gmail.com', 0, 0, '698d51a19d8a', '', NULL, '2023-04-09 17:31:42', 0, 0),
+(32, '', '', 0, 0, 'd41d8cd98f00', '', NULL, '2023-04-12 17:50:26', 0, 0),
+(34, 'wa', 'Ab@GMAIL.COM', 0, 0, '698d51a19d8a', '', NULL, '2023-04-12 17:50:57', 0, 0),
+(35, 'wa', 'wagner@gmail.com', 0, 0, '111', '', NULL, '2023-04-16 12:31:38', 1, 1),
+(36, 'wa', 'dois@gmail.com', 0, 0, '698d51a19d8a', '', NULL, '2023-04-12 18:31:50', 0, 0),
+(38, 'wa', 'vi@gmail.com', 0, 0, '698d51a19d8a', '', NULL, '2023-04-13 01:56:32', 0, 0),
+(41, 'paulo', '111', 0, 0, 'bce6f821b66b', '', NULL, '2023-04-13 17:59:39', 0, 0),
+(42, 'paulo', '1234', 0, 0, '28bc21614075', '2', NULL, '2023-04-13 18:48:42', 0, 0),
+(45, 'paulo', 'ana@gmail.com', 0, 1, '111', '', NULL, '2023-05-01 12:46:24', 0, 0),
+(46, 'wan', '12@gmail.com', 0, 0, '698d51a19d8a', '1', NULL, '2023-04-13 18:49:13', 0, 1),
+(47, 'wagne', 'wagne@gmail.com', 0, 0, '698d51a19d8a', '', NULL, '2023-04-16 15:15:07', 0, 0),
+(50, 'wan', '122@gmail.com', 0, 2, '698d51a19d8a', '', NULL, '2023-05-01 12:45:56', 0, 0),
+(52, 'wa', '22@gmail.com', 0, 1, '111', '', NULL, '2023-05-01 12:45:41', 0, 0);
 
 -- --------------------------------------------------------
 

@@ -1,10 +1,10 @@
 
 <?php
 
-$dbHost = '127.0.0.1:3306';
-$dbUsername = 'u849808817_escola';
-$dbPassword = 'Escola10';
-$dbName = 'u849808817_escola';
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'aluno';
 
 $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
   if($conexao->connect_errno)
