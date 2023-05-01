@@ -40,9 +40,9 @@ include('protect.php');
     <ul id="menu">
         
         <li class="botao"> <a href="#"><b> Atividade </b> </a> </li>
-        <li class="botao"> <a href=""><b> Turmas </b> </a></li> 
-        <li class="botao"> <a href="#"><b> Nossas Redes </b> </a></li><br>
-        <li class="botao"> <a href="#"><b> Calendário </b></a> </li>
+        <li class="botao"> <a href="turma.php"><b> Turmas </b> </a></li> 
+        <li class="botao"> <a href="https://www.facebook.com/Hotelzinho-Infantil-Jardim-da-Alegria-1785110238450229/" target="_blank"><b> Nossas Redes </b> </a></li><br>
+        <li class="botao"> <a href="https://calendar.google.com/calendar/u/1/r?pli=1"target="_blank" ><b> Calendário </b></a> </li>
         <li class="botao"> <a href="lista.php"><b> Lista </b> </a> </li>
         <li class="botao"> <a href="lista.php"><b> Cadastro </b> </a></li>
     </ul>
