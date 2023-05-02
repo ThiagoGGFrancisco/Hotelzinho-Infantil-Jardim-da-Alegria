@@ -24,29 +24,21 @@ include('protect.php');
      <body>
        <h2> <ul id="menusuperior">
             <li class="vermelho"><a href=""> Início </a> </li>
-            <li><a href="sobre.html"> Sobre </a> </li>
+            <li><a href=""> Sobre </a> </li>
             <li><a href=""> Contato </a>  </li>
             <li> <a href="sair.php">Sair</a>  </li>
-            
-            
+           
              </ul></h2>
 
       <h1>Bem vindo <u> <?php echo $_SESSION['nome'] ?></u></h1>
  
-
-       
-
     <br>
         <br>
 
-
-
-
-
     <ul id="menu">
-        <li class="botao"> <a href=""><b> lista </b> </a> </li>
-        <li class="botao"> <a href=""><b> Atividade </b> </a> </li>
-        <li class="botao"> <a href=""><b> Turmas </b> </a></li> <br>
+        <li class="botao"> <a href="list.php"><b> lista </b> </a> </li>
+        <li class="botao"> <a href="atividade.php"><b> Atividade </b> </a> </li>
+        <li class="botao"> <a href="turma.php"><b> Turmas </b> </a></li> <br>
         <li class="botao"> <a href="#"><b> Nossas Redes </b> </a></li>
         <li class="botao"> <a href="https://calendar.google.com/calendar/u/1/r?pli=1"target="_blank" ><b> Calendário </b></a> </li>
         <li class="botao"> <a href="#"><b> Endereço </b> </a></li>
@@ -70,6 +62,8 @@ include('protect.php');
 
         <input type="submit" name="SendCadUser" value="Cadastrar"><br><br>
     </form>
+    
+
     
 </body>
 </html>
