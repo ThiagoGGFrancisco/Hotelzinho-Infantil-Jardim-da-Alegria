@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Maio-2023 às 03:22
+-- Tempo de geração: 02-Maio-2023 às 17:24
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 7.4.28
 
@@ -217,6 +217,26 @@ INSERT INTO `niveis_acessos` (`id`, `nome`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `sala`
+--
+
+CREATE TABLE `sala` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(150) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `created` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `sala`
+--
+
+INSERT INTO `sala` (`id`, `nome`, `email`, `created`) VALUES
+(1, 'ana', 'ana1@gmail.com', '2023-05-02 12:15:52');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuarionivel`
 --
 
@@ -289,6 +309,12 @@ ALTER TABLE `niveis_acessos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `sala`
+--
+ALTER TABLE `sala`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `usuarionivel`
 --
 ALTER TABLE `usuarionivel`
@@ -321,6 +347,12 @@ ALTER TABLE `inscricao`
 --
 ALTER TABLE `niveis_acessos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `sala`
+--
+ALTER TABLE `sala`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuarionivel`
