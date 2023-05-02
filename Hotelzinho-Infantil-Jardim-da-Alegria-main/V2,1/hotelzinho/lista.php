@@ -187,7 +187,7 @@ include('protect.php');
         
         <?php
         include('conexao.php');
-        $sqlSelect = "SELECT * FROM cadastro";
+        $sqlSelect = "SELECT * FROM cadastro  ORDER BY id DESC";
         $result = mysqli_query($conexao,$sqlSelect);
         while($data = mysqli_fetch_array($result)){
             ?>

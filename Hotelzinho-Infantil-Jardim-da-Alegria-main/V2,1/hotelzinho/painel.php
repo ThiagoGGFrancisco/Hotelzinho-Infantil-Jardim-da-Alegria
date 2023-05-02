@@ -63,15 +63,22 @@ include('protect.php');
             unset($_SESSION['msg']);
         }
         ?>
-        <form method="POST" action="proc_cad_img.php" enctype="multipart/form-data">
-            <label>Nome:</label>
-            <input type="text" name="nome" placeholder="Digitar o nome"><br><br>
-            
-            <label>Imagem</label>
-            <input type="file" name="imagem"><br><br>
-            
-            <input name="SendCadImg" type="submit" value="Cadastrar">
-        </form>
+        <div class="container">
+        
+       
+        <form method="POST" action="img.php" enctype="multipart/form-data">
+        <label>Nome: </label>
+        <input type="text" name="nome" placeholder="Nome completo"><br><br>
+
+        <label>E-mail: </label>
+        <input type="email" name="email" placeholder="Melhor e-mail"><br><br>
+
+        <label>Imagens</label>
+        <input type="file" name="imagens[]" multiple="multiple"><br><br>
+
+        <input type="submit" name="SendCadUser" value="Cadastrar"><br><br>
+    </form>
+    
 </div>
 </div>
 
