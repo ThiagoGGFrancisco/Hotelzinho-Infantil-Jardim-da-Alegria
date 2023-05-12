@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('protect.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -21,119 +20,152 @@ include('protect.php');
   
         </style>
     </head>
+    
+    
      <body>
        <h2> <ul id="menusuperior">
             <li class="vermelho"><a href=""> Início </a> </li>
             <li><a href="sobre.html"> Sobre </a> </li>
             <li><a href="sistema.php"> Volta </a>  </li>
             <li> <a href="sair.php">Sair</a>  </li>
-            
-            
-             </ul></h2>
+            </ul></h2>
 
       <h1>Bem vindo <u> <?php echo $_SESSION['nome'] ?></u></h1>
  
-        <br>
+        
+  
 
-    <ul id="menu">
-        <li class="botao"> <a href=""><b> lista </b> </a> </li>
-        <li class="botao"> <a href="#"><b> Atividade </b> </a> </li>
-        <li class="botao"> <a href=""><b> Turmas </b> </a></li> <br>
-        <li class="botao"> <a href="#"><b> Nossas Redes </b> </a></li>
-        <li class="botao"> <a href="https://calendar.google.com/calendar/u/1/r?pli=1"target="_blank" ><b> Calendário </b></a> </li>
-        <li class="botao"> <a href="https://www.google.com/maps/place/Av.+Santo+Irineu,+459+-+Jardim+das+Oliveiras+(Nova+Veneza),+Sumar%C3%A9+-+SP,+13180-170/@-22.8350775,-47.1626773,17z/data=!3m1!4b1!4m6!3m5!1s0x94c8bf397ff7e6b7:0x4b00bff181f386ff!8m2!3d-22.8350775!4d-47.1604886!16s%2Fg%2F11gc9h0ch6" target="_blank" style="color: #ea272a; text-decoration: none;"><b> Endereço </b> </a></li>
-    </ul>
-
-</body>
-    
-     
+<?php
  
+ include_once("conexao.php");
 
-            <div class="content">                                      
+ $id = $_GET['id'];
+?>
+<div class="content"> 
+    <div class="col-12">
+    <div class="card">
+    <div class="card-header bg-info">
+    <h4 class="text-center text-light">Consulta.</h4>
+</div>
+ 
+ <table border="1" style='width:100%' >
+ <tr>
+ <th>Id</th
+ <th>Nome</th>
+ <th>Nome</th>
+ <th>Email</th>
+ <th>Telefone</th>
+ <th>Nível</th>
+ </tr>
 
-     <div class="container mt-5">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header bg-dark">
-                            <h4 class="text-center text-light">Cadastro Geral.</h4>
-                        </div>
-                        <div class="card-body">
-                            <form action="insert.php" method="post" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="username" class="form-label">Nome</label>
-                                            <input type="text" class="form-control" id="username" name="user_name" placeholder="Enter  Name" autocomplete="off">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="useremail" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="useremail" name="user_email" placeholder="Enter Email" autocomplete="off">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="usercontact" class="form-label">Telefone</label>
-                                            <input type="text" class="form-control" id="usercontact" name="user_contact" placeholder="Enter telefone" autocomplete="off">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">      
-                                            <label for="usercontact" class="form-label">Níveis de acesso</label>
-                                            <input type="text" class="form-control" id="usercontact" name="user_adm" placeholder="Níveis 0, 1 e 2. " autocomplete="off">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="userpassword" class="form-label">Senha</label>
-                                            <input type="password" class="form-control" id="userpassword" name="user_password" placeholder="senha" autocomplete="off">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="userpassword" class="form-label">Confirma senha</label>
-                                            <input type="password" class="form-control" id="userpassword" name="confirm_user_password" placeholder="confirma senha" autocomplete="off">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6"></div>
-                                    <div class="col-md-6">
-                                        <button type="submit" name="submit_btn" class="btn bg-dark text-light submit_button"><b>Submit</b></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
-            
-        <style>
-        table  td, table th{
-        vertical-align:middle;
-        text-align:right;
-        padding:20px!important;
+ <?php
+ $sql = "SELECT * FROM cadastro WHERE id = '$id'";
+ $resultado = mysqli_query($conexao,$sql) or die("Erro ao retornar dados");
+ 
+ while ($registro = mysqli_fetch_array($resultado))
+ {
+    $id = $registro['id'];
+   $nome = $registro['nome'];
+   $email = $registro['email'];
+   $telefone = $registro['telefone'];
+   $adm = $registro['adm'];
+   echo "<tr>";
+   echo "<td>".$id."</td>";
+   echo "<td>".$nome."</td>";
+   echo "<td>".$email."</td>";
+   echo "<td>".$telefone."</td>";
+   echo "<td>".$adm."</td>";
+   echo "</tr>";
+ }
+ mysqli_close($conexao);
+ echo "</table>";
+?></tbody>
+        </table>
+    </div>
+
+   <?php
+    include_once('conexao.php');
+
+    if(!empty($_GET['id']))
+    {
+        $id = $_GET['id'];
+        $sqlSelect = "SELECT * FROM cadastro WHERE id=$id";
+        $result = $conexao->query($sqlSelect);
+        if($result->num_rows > 0)
+        {
+            while($user_data = mysqli_fetch_assoc($result))
+            {
+                $id = $user_data['id'];
+                $nome = $user_data['nome'];
+                $email = $user_data['email'];
+                $telefone = $user_data['telefone'];
+                $adm = $user_data['adm'];
+              
+            }
         }
-    </style>
-</head>
+        else
+        {
+            header('Location:');
+        }
+    }
+    else
+    {
+        header('Location: ');
+    }
+?>
+
+<br>
+     <div class="content"> 
+        <form action="saveEdita.php" method="POST">
+            <fieldset>
+    <div class="col-12">
+    <div class="card">
+    <div class="card-header bg-warning">
+    <h4 class="text-center text-light">Editar Cliente. </h4>
+
+          </div>      
+                <div class="inputBox">
+                    <h3 class="text-center text-light"><label for="nome" class="labelInput">ID <?php echo $id;?></label></h3>
+                </div>
+               
+                <div class="inputBox">
+                    
+                    <input type="text" name="nome" id="nome" class="inputUser" value=<?php echo $nome;?> Nome>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input enail="text" name="email" id="email" class="inputUser" value=<?php echo $email;?> E-mail>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+           
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" value=<?php echo $telefone;?> Telefone>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input type="text" name="adm" id="adm" class="inputUser" value=<?php echo $adm;?> Nível>
+                    <label for="cidade" class="labelInput">Nível</label>
+                </div>
+                
+				<input type="hidden" name="id" value=<?php echo $id;?>>
+                <input type="submit" name="update" id="submit">
+            </fieldset>
+        </form>
+    </div>
+    </div>
+<br>
 
 
-       
+<div class="content"> 
     <div class="container my-4">
         <header class="d-flex justify-content-between my-4">
-            <h1>Lista Cadastro.</h1>
+            <h1 >Lista Cadastro.</h1>
             
         </header>
         <?php
-       
+        session_start();
         if (isset($_SESSION["create"])) {
         ?>
         <div class="alert alert-success">
@@ -171,7 +203,6 @@ include('protect.php');
         
         ?>
         
-
         <table class="table table-bordered">
         <thead>
             <tr>
@@ -181,28 +212,29 @@ include('protect.php');
                 <th>Data</th>
                 <th>ADM</th>
                 <th>Seleção</th>
+                
             </tr>
         </thead>
-        <tbody>
+      
+        
         
         <?php
         include('conexao.php');
-        $sqlSelect = "SELECT * FROM cadastro  ORDER BY id DESC";
+        $sqlSelect = "SELECT * FROM cadastro ORDER BY id DESC";
         $result = mysqli_query($conexao,$sqlSelect);
         while($data = mysqli_fetch_array($result)){
             ?>
             <tr>
-                <td><?php echo $data['id']; ?></td>
+                <td><?php echo $data['id']; ?>
+                 <a href="model/delete.php?id=<?php echo $data['id']; ?>" class="botao btn-danger">Deleta</a></td>
                 <td><?php echo $data['nome']; ?></td>
                 <td><?php echo $data['email']; ?></td>
                 <td><?php echo $data['data']; ?></td>
-                <td><?php echo $data['adm']; ?></td>
-                <td>
-                    
-                    <a href="model/view.php?id=<?php echo $data['id']; ?>" class="btn btn-info">consulta</a>
-                    <a href="model/edit.php?id=<?php echo $data['id']; ?>" class="btn btn-warning">Edita</a>
-                    <a href="model/delete.php?id=<?php echo $data['id']; ?>" class="btn btn-danger">Deleta</a>
-                </td>
+                <td><?php echo $data['adm']; ?>
+                
+                    <a href="?id=<?php echo $data['id']; ?>" class="botao btn-info">consulta</a></td>
+               <td><a href="?id=<?php echo $data['id']; ?>" class="botao btn-warning">Edita</a></td>
+                <>
             </tr>
             <?php
         }
@@ -210,12 +242,8 @@ include('protect.php');
         </tbody>
         </table>
     </div>
+     </div>
     
-    
-    
-    
+  </script>  
 </body>
-</html>
-        
-</script>
 </html>
